@@ -23,7 +23,8 @@ namespace PhoneBook
 
         public string GetInput()
         {
-            return Console.ReadLine();
+			string result =  Console.ReadLine();
+			return result;
         }
 
         public void PrintContact(Contact contact)
@@ -46,7 +47,7 @@ namespace PhoneBook
             for (int i = 0; i < contacts.Count; i++)
             {
                 Console.WriteLine();
-                Console.Write("{0} - ", i+1);
+                Console.Write("[{0}] - ", i+1);
                 PrintContact(contacts[i]);
             }
         }
@@ -58,12 +59,12 @@ namespace PhoneBook
             Console.ReadKey();
         }
 
-        public string GetContactNoFor(string question)
-        {
-            Console.WriteLine();
-            Console.Write(question + ": ");
-            return Console.ReadLine();
-        }
+//		public string GetContactNumberFor(string question)
+//        {
+//            Console.WriteLine();
+//            Console.Write(question + ": ");
+//            return Console.ReadLine();
+//        }
 
         public void ContactUpdated(int editnumber)
         {
