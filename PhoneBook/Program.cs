@@ -15,7 +15,7 @@ namespace PhoneBook
             while (true)
             {
                 view.StartMenu();
-                var v = view.GetInput();
+                string v = view.GetInput();
                 if (v.ToUpper() == "Q")
                 {
                     System.Environment.Exit(0);
@@ -57,7 +57,7 @@ namespace PhoneBook
                     {
                         view.PrintContacts(contacts);
                         int deletenumber =
-                            int.Parse(view.GetContactNoFor("Enter number of contact to delete"));
+							int.Parse(view.GetContactNumberFor("Enter number of contact to delete"));
                         if (deletenumber > contacts.Count || deletenumber < 1)
                         {
                             view.ContactInvalid();
@@ -84,7 +84,7 @@ namespace PhoneBook
                     {
                         view.PrintContacts(contacts);
                         int editnumber =
-                            int.Parse(view.GetContactNoFor("Please enter the number of the contact to edit"));
+							int.Parse(view.GetContactNumberFor("Please enter the number of the contact to edit"));
                         if (editnumber > contacts.Count || editnumber < 1)
                         {
                             view.ContactInvalid();
