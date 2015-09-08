@@ -57,18 +57,14 @@ namespace PhoneBook
                     {
                         view.PrintContacts(contacts);
                         int deletenumber =
-							int.Parse(view.GetContactNumberFor("Enter number of contact to delete"));
-                        if (deletenumber > contacts.Count || deletenumber < 1)
-                        {
-                            view.ContactInvalid();
-                            view.PauseForUser();
-                            continue;
-                        }
-                        else
-                        {
-                            contacts.RemoveAt(deletenumber - 1);
-                            view.ContactDeleted();
-                        }
+							int.Parse(view.GetInputFor("Enter number of contact to delete"));
+
+						bool deleteSuccess = contactList.DeleteContact(deletenumber - 1);
+						if (deleteSuccess) { 
+							view.ContactDeleted (); 
+						} else {
+							view.ContactInvalid ();
+						}
                     }
                     view.PauseForUser();
                 }
@@ -84,7 +80,7 @@ namespace PhoneBook
                     {
                         view.PrintContacts(contacts);
                         int editnumber =
-							int.Parse(view.GetContactNumberFor("Please enter the number of the contact to edit"));
+							int.Parse(view.GetInputFor("Please enter the number of the contact to edit"));
                         if (editnumber > contacts.Count || editnumber < 1)
                         {
                             view.ContactInvalid();

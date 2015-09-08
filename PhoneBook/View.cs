@@ -59,12 +59,12 @@ namespace PhoneBook
             Console.ReadKey();
         }
 
-		public string GetContactNumberFor(string question)
-        {
-            Console.WriteLine();
-            Console.Write(question + ": ");
-            return Console.ReadLine();
-        }
+//		public string GetContactNumberFor(string question)
+//        {
+//            Console.WriteLine();
+//            Console.Write(question + ": ");
+//            return Console.ReadLine();
+//        }
 
         public void ContactUpdated(int editnumber)
         {
