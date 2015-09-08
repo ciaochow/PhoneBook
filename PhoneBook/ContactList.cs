@@ -34,5 +34,12 @@ namespace PhoneBook
 			return true;
 		}
 
+		public void EditContact (int position, string firstname, string lastname, string phone)
+		{
+			Contacts[position].FirstName = firstname;
+			Contacts[position].LastName = lastname;
+			Contacts[position].PhoneNumber = phone;
+		}
+
 	}
 }

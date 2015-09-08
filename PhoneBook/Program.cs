@@ -81,19 +81,20 @@ namespace PhoneBook
                         view.PrintContacts(contacts);
                         int editnumber =
 							int.Parse(view.GetInputFor("Please enter the number of the contact to edit"));
+						
                         if (editnumber > contacts.Count || editnumber < 1)
                         {
                             view.ContactInvalid();
-                            view.PauseForUser();
-                            continue;
+//                            view.PauseForUser();
+//                            continue;
                         }
                         else
                         {
                             view.PrintContact(contacts[editnumber - 1]);
-                            contacts[editnumber - 1].FirstName = view.GetInputFor("Enter the updated first name");
-                            contacts[editnumber - 1].LastName = view.GetInputFor("Enter the updated last name");
-                            contacts[editnumber - 1].PhoneNumber = view.GetInputFor("Enter the updated phone number");
-                            Console.WriteLine();
+                            string firstName = view.GetInputFor("Enter the updated first name");
+                            string lastName = view.GetInputFor("Enter the updated last name");
+                            string phoneNumber = view.GetInputFor("Enter the updated phone number");
+							contactList.EditContact (editnumber - 1, firstName, lastName, phoneNumber);
                             view.PrintContact(contacts[editnumber - 1]);
                             view.ContactUpdated(editnumber);
                         }
