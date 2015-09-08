@@ -95,6 +95,7 @@ namespace PhoneBook
                             string lastName = view.GetInputFor("Enter the updated last name");
                             string phoneNumber = view.GetInputFor("Enter the updated phone number");
 							contactList.EditContact (editnumber - 1, firstName, lastName, phoneNumber);
+							Console.WriteLine ();
                             view.PrintContact(contacts[editnumber - 1]);
                             view.ContactUpdated(editnumber);
                         }
