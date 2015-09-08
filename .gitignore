@@ -22,6 +22,8 @@
 x64/
 x86/
 build/
+bin/
+obj/
 bld/
 [Bb]in/
 [Oo]bj/
